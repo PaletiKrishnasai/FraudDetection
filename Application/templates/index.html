@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Credit Card Fraud Detection</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='formoid-solid-green.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Patrick+Hand&family=Raleway:ital,wght@1,800&family=Righteous&display=swap" rel="stylesheet">
+    </head>
+    <body style="background-color: #27496d;">
+
+        <div class="container">
+            <div class="row" style="background-color: #142850; color: #ffffff;">
+                <div class="col-sm-12">
+                    <h1 class = "first" style="font-family: 'Righteous', cursive;">Credit Card Fraud Detection</h1>
+                    <h1 class = "first" style="font-family: 'Patrick Hand', cursive;">Input Parameters</h1>
+                </div>
+            </div>
+
+            <form action = "{{ url_for('predict')}}" class="formoid-solid-green" style="background-color:#ffffff;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:650px;min-width:150px" method="post"><div class="title"><h2>Fill the Parameters for prediction</h2></div>
+                <div class="element-number" title="gfdv"><label class="title"><span class="required">Enter Time in Seconds</span></label><div class="item-cont"><input class="large" type="text" min="0" max="100" name="number" required="required" placeholder="Time" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number1" required="required" placeholder="Value of V1" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number2" required="required" placeholder="Value of V2" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number3" required="required" placeholder="Value of V3" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number4" required="required" placeholder="Value of V4" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number5" required="required" placeholder="Value of V5" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number6" required="required" placeholder="Value of V6" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number7" required="required" placeholder="Value of V7" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number8" required="required" placeholder="Value of V8" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number9" required="required" placeholder="Value of V9" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number10" required="required" placeholder="Value of V10" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number11" required="required" placeholder="Value of V11" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number12" required="required" placeholder="Value of V12" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number13" required="required" placeholder="Value of V13" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number14" required="required" placeholder="Value of V14" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number15" required="required" placeholder="Value of V15" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number16" required="required" placeholder="Value of V16" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number17" required="required" placeholder="Value of V17" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number18" required="required" placeholder="Value of V18" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number19" required="required" placeholder="Value of V19" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number20" required="required" placeholder="Value of V20" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number21" required="required" placeholder="Value of  V21" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number22" required="required" placeholder="Value of V22" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number23" required="required" placeholder="Value of V23" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number24" required="required" placeholder="Value of V24" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number25" required="required" placeholder="Value of V25" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number26" required="required" placeholder="Value of V26" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number27" required="required" placeholder="Value of V27" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="number28" required="required" placeholder="Value of V28" value=""/><span class="icon-place"></span></div></div>
+                <div class="element-number"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" step = "0.01" min="-5" max="100" name="amt" required="required" placeholder="Transaction Amount" value=""/><span class="icon-place"></span></div></div>
+                <!-- <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> -->
+            <button type="submit" class="btn btn-primary btn-lg btn-block" style="text-align: center; background-color: #4cd3c2; font-size: x-large; font-family: 'Bangers', cursive;">Predict</button>
+            </form>
+            <br>
+            <br>
+            <h1 style="text-align: center; font-family: 'Raleway', sans-serif; color: #ffffff;">{{ prediction_text }}</h1>
+        </div>
+
+        <script src="" async defer></script>
+    </body>
+</html>
